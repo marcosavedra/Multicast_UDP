@@ -14,5 +14,6 @@ sock = socket.socket(socket.AF_INET,
 sock.setsockopt(socket.IPPROTO_IP,
                 socket.IP_MULTICAST_TTL,
                 ttl)
+mensagem = (input('Digite uma mensagem: '))
+sock.sendto(mensagem.encode(), (group, port))
 
-sock.sendto(b"hello world", (group, port))
